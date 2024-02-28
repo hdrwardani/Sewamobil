@@ -1,0 +1,33 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('mstuser', function (Blueprint $table) {
+            $table->id(); 
+            $table->string('fnama');
+            $table->string('falamat');
+            $table->string('fnotelp');
+            $table->string('fnosim');
+            $table->string('femail');
+            $table->string('fpassword');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('mstuser');
+    }
+};
